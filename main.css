@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Changa';
+  src: url('./fonts/Changa-Regular.ttf');
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(45deg, #661ba0, #de4141);
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Changa', sans-serif;
+  background-size: 200%;
+  background-position: 50%;
+  transition: background-position 0.75s ease;
+}
+a {
+  text-decoration: none;
+}
+
+.intro-container {
+  padding-top: 1rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+.intro-container .social-link-container a {
+  color: #fff;
+  font-size: 2.5rem;
+  display: inline-block;
+  text-shadow: 0px 0px 25px #00000078;
+  transition: all 0.2s ease;
+}
+.intro-container .social-link-container a:hover {
+  transform: scale(1.2);
+  text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.623);
+}
+.intro-container .name,
+.intro-container .title {
+  margin: 0.2rem 0;
+}
+.avatar-me {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px #00000078;
+}
+
+.main-links-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-links-container a {
+  color: #fff;
+  border: 10px solid #fff;
+  padding: 1rem 5rem;
+  font-size: 2.3rem;
+  box-shadow: 0px 0px 25px #00000078;
+  background-color: rgba(0, 0, 0, 0.452);
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+/* .main-links-container a:hover {
+  border-color: #000;
+} */
+
+.main-links-container a.about-me:hover {
+  background-color: #008e8e;
+}
+.main-links-container a.projects:hover {
+  background-color: #f1642c;
+}
+
+body.about-me-hovered {
+  background-position: 0%;
+}
+body.projects-hovered {
+  background-position: 100%;
+}
+body.about-me-hovered .main-links-container a.projects,
+body.projects-hovered .main-links-container a.about-me {
+  opacity: 0.5;
+}
