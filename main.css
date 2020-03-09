@@ -6,11 +6,11 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(90deg, #460476, #de4141);
+  background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
   box-sizing: border-box;
   color: #fff;
   font-family: 'Changa', sans-serif;
-  background-size: 200%;
+  background-size: 250%;
   background-position: 50%;
   transition: background-position 0.75s ease;
 }
@@ -60,19 +60,24 @@ a {
 
 .main-links-container {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 330px 330px 330px;
   justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
 }
 
 .main-links-container a {
+  display: inline-block;
   color: #fff;
   border: 10px solid #fff;
   padding: 1rem 5rem;
-  font-size: 2.3rem;
+  font-size: 2rem;
   box-shadow: 0px 0px 25px #00000078;
   background-color: rgba(0, 0, 0, 0.452);
   font-weight: bold;
   transition: all 0.2s ease;
+  text-align: center;
 }
 /* .main-links-container a:hover {
   border-color: #000;
@@ -85,13 +90,77 @@ a {
   background-color: #f1642c;
 }
 
+.main-links-container a.contact-me:hover {
+  background-color: #54d04a;
+}
+
 body.about-me-hovered {
   background-position: 0%;
 }
 body.projects-hovered {
+  background-position: 50%;
+}
+body.contact-me-hovered {
   background-position: 100%;
 }
 body.about-me-hovered .main-links-container a.projects,
-body.projects-hovered .main-links-container a.about-me {
+body.about-me-hovered .main-links-container a.contact-me,
+body.projects-hovered .main-links-container a.about-me,
+body.projects-hovered .main-links-container a.contact-me,
+body.contact-me-hovered .main-links-container a.about-me,
+body.contact-me-hovered .main-links-container a.projects {
   opacity: 0.5;
+}
+
+.main-links-container .about-me-container {
+  position: relative;
+}
+.main-links-container .about-me-container .decor {
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-links-container .about-me-container .decor .line {
+  background-color: #fff;
+  width: 40px;
+  height: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.568);
+}
+
+.main-links-container .about-me-container .decor .line:nth-child(1) {
+  transform: rotateZ(45deg);
+}
+.main-links-container .about-me-container .decor .line:nth-child(2) {
+  transform: rotateZ(90deg);
+}
+.main-links-container .about-me-container .decor .line:nth-child(3) {
+  transform: rotateZ(-45deg);
+}
+
+body.about-me-hovered .main-links-container .about-me-container .decor {
+  animation: aboutMeHoverAnim 2s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite
+    both;
+}
+
+@keyframes aboutMeHoverAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  50% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85) translateY(10px);
+    opacity: 0;
+  }
 }
