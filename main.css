@@ -2,23 +2,27 @@
   font-family: 'Changa';
   src: url('./fonts/Changa-Regular.ttf');
 }
+* {
+  box-sizing: border-box;
+}
 body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
   background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
-  box-sizing: border-box;
+  background-repeat: no-repeat;
   color: #fff;
   font-family: 'Changa', sans-serif;
-  background-size: 250%;
+  background-size: 200%;
   background-position: 50%;
   transition: background-position 0.75s ease;
 }
 body .page {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +39,10 @@ a {
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
+}
+.intro-container .social-link-container {
+  align-self: flex-start;
+  padding-top: 2rem;
 }
 .intro-container .social-link-container a {
   color: #fff;
@@ -117,7 +125,7 @@ body.contact-me-hovered .main-links-container a.projects {
 }
 .main-links-container .about-me-container .decor {
   position: absolute;
-  top: -4rem;
+  top: -3.5rem;
   left: 0;
   width: 100%;
   height: 100%;
@@ -146,8 +154,8 @@ body.contact-me-hovered .main-links-container a.projects {
 }
 
 body.about-me-hovered .main-links-container .about-me-container .decor {
-  animation: aboutMeHoverAnim 2s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite
-    both;
+  animation: aboutMeHoverAnim 1.25s cubic-bezier(0.46, 0.03, 0.52, 0.96)
+    infinite both;
 }
 
 @keyframes aboutMeHoverAnim {
@@ -156,11 +164,11 @@ body.about-me-hovered .main-links-container .about-me-container .decor {
     transform: scale(0.85) translateY(20px);
   }
   50% {
-    transform: scale(1) translateY(0px);
+    /* transform: scale(1) translateY(0px); */
     opacity: 1;
   }
   100% {
-    transform: scale(0.85) translateY(10px);
+    transform: scale(1) translateY(0px);
     opacity: 0;
   }
 }
