@@ -1,5 +1,8 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="header">
+      <h1>About Me</h1>
+      <i class="fas fa-times fa-lg close"></i>
+    </div>
   </div>
 </template>
