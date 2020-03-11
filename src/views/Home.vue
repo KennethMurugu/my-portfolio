@@ -1,5 +1,5 @@
 <template>
-  <div class="home page">
+  <div class="home page" ref="home-page">
     <div class="intro-container">
       <div class="social-link-container left">
         <a href="https://github.com/KennethMurugu/">
@@ -19,48 +19,48 @@
     </div>
 
     <div class="main-links-container">
-      <div class="about-me-container">
-        <div class="decor">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-        <a href="#" class="link about-me" ref="btnAboutMe">ABOUT ME</a>
-      </div>
-      <a href="#" class="link projects" ref="btnProjects">PROJECTS</a>
-      <a href="#" class="link contact-me" ref="btnSayHi">SAY HI</a>
+      <a href="#" class="link about-me" ref="btnAboutMe" @click="$emit('switchpage', 1)">ABOUT ME</a>
+      <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a>
+      <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: 'Home',
   mounted() {
-    const body = document.querySelector("body");
-    this.$refs["btnAboutMe"].addEventListener("mouseenter", function() {
-      body.classList.add("about-me-hovered");
-    });
-    this.$refs["btnAboutMe"].addEventListener("mouseleave", function() {
-      body.classList.remove("about-me-hovered");
-    });
-    this.$refs["btnProjects"].addEventListener("mouseenter", function() {
-      body.classList.add("projects-hovered");
-    });
-    this.$refs["btnProjects"].addEventListener("mouseleave", function() {
-      body.classList.remove("projects-hovered");
-    });
-    this.$refs["btnSayHi"].addEventListener("mouseenter", function() {
-      body.classList.add("say-hi-hovered");
-    });
-    this.$refs["btnSayHi"].addEventListener("mouseleave", function() {
-      body.classList.remove("say-hi-hovered");
-    });
+    const home = document.querySelector('body')
+    this.$refs['btnAboutMe'].addEventListener('mouseenter', function() {
+      home.classList.add('about-me-hovered')
+    })
+    this.$refs['btnAboutMe'].addEventListener('mouseleave', function() {
+      home.classList.remove('about-me-hovered')
+    })
+    this.$refs['btnProjects'].addEventListener('mouseenter', function() {
+      home.classList.add('projects-hovered')
+    })
+    this.$refs['btnProjects'].addEventListener('mouseleave', function() {
+      home.classList.remove('projects-hovered')
+    })
+    this.$refs['btnSayHi'].addEventListener('mouseenter', function() {
+      home.classList.add('say-hi-hovered')
+    })
+    this.$refs['btnSayHi'].addEventListener('mouseleave', function() {
+      home.classList.remove('say-hi-hovered')
+    })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
+.home {
+  // background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
+  // background-repeat: no-repeat;
+  // background-size: 200%;
+  // background-position: center;
+  // transition: background-position 0.75s ease;
+}
 .intro-container {
   padding-top: 1rem;
   text-align: center;
@@ -121,15 +121,24 @@ export default {
     text-align: center;
 
     &.about-me:hover {
-      background-color: #008e8e;
+      background-color: #b93838;
     }
     &.projects:hover {
-      background-color: #f1642c;
+      background-color: #6e03bb;
     }
 
-    &.contact-me:hover {
-      background-color: #54d04a;
+    &.say-hi:hover {
+      background-color: #2091ad;
     }
+  }
+}
+
+.home {
+  &.about-me-hovered {
+    background-position: 0%;
+  }
+  &.say-hi-hovered {
+    background-position: 100%;
   }
 }
 

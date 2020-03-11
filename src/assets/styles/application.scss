@@ -13,15 +13,18 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
-  background-repeat: no-repeat;
   color: #fff;
   font-family: 'Changa', sans-serif;
+  overflow-x: hidden;
+  background-color: #000;
+  background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
+  background-repeat: no-repeat;
   background-size: 200%;
-  background-position: 50%;
+  background-position: center;
   transition: background-position 0.75s ease;
   .page {
     min-height: 100vh;
+    width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
     padding-bottom: 1rem;
@@ -29,6 +32,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .header h1 {
+      margin: 0.5rem 0;
+    }
   }
 
   &.about-me-hovered {
@@ -36,5 +43,9 @@ body {
   }
   &.say-hi-hovered {
     background-position: 100%;
+  }
+
+  &.showing-page {
+    overflow: hidden;
   }
 }
