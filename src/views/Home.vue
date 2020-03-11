@@ -19,9 +19,18 @@
     </div>
 
     <div class="main-links-container">
-      <a href="#" class="link about-me" ref="btnAboutMe" @click="$emit('switchpage', 1)">ABOUT ME</a>
-      <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a>
-      <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a>
+      <div class="link-container">
+        <a href="#" class="link about-me" ref="btnAboutMe" @click="$emit('switchpage', 1)">ABOUT ME</a>
+        <div class="pulse"></div>
+      </div>
+      <div class="link-container">
+        <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a>
+        <div class="pulse"></div>
+      </div>
+      <div class="link-container">
+        <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a>
+        <div class="pulse"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,13 +63,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  // background-image: linear-gradient(45deg, #cb4040, #460476, #0c90b1);
-  // background-repeat: no-repeat;
-  // background-size: 200%;
-  // background-position: center;
-  // transition: background-position 0.75s ease;
-}
 .intro-container {
   padding-top: 1rem;
   text-align: center;
@@ -107,9 +109,14 @@ export default {
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+  position: relative;
+
+  .link-container {
+    position: relative;
+  }
 
   a {
-    display: inline-block;
+    display: block;
     color: #fff;
     border: 10px solid #fff;
     padding: 1rem 5rem;
@@ -119,6 +126,21 @@ export default {
     font-weight: bold;
     transition: all 0.2s ease;
     text-align: center;
+
+    & + .pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: 10px solid #fff;
+      pointer-events: none;
+      left: 0;
+      top: 0;
+    }
+
+    &:hover + .pulse {
+      animation: pulseAnim 0.75s linear infinite both;
+    }
 
     &.about-me:hover {
       background-color: #b93838;
@@ -139,6 +161,14 @@ export default {
   }
   &.say-hi-hovered {
     background-position: 100%;
+  }
+}
+
+@keyframes pulseAnim {
+  to {
+    transform: scale(1.1, 1.35);
+    opacity: 0;
+    border-width: 5px;
   }
 }
 
