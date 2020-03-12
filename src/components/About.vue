@@ -1,20 +1,26 @@
 <template>
   <div class="page about" ref="about-page">
-    <div class="header">
+    <!-- <div class="header">
       <h1>About Me</h1>
-      <!-- <div class="links">
-        <p @click="$emit('switchpage', 0)">Home</p>
-        <p @click="$emit('switchpage', 1)">Projects</p>
-        <p @click="$emit('switchpage', 3)">Say Hi</p>
-      </div>-->
       <i class="fas fa-times fa-lg close" @click="$emit('switchpage', 0)"></i>
-    </div>
+    </div>-->
+    <PageHeader
+      class="header"
+      title="About"
+      background="#924848"
+      v-on:close="$emit('switchpage', 0)"
+    >
+      <p @click="$emit('switchpage', 2)">Projects</p>
+      <p @click="$emit('switchpage', 3)">Say Hi</p>
+    </PageHeader>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader'
 export default {
   name: 'About',
+  components: { PageHeader },
   methods: {
     close() {
       this.$emit('closeme')
@@ -29,24 +35,5 @@ export default {
   display: block;
   padding: 0;
   overflow: auto;
-
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: #924848;
-    padding: 0 2rem;
-
-    .links {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      gap: 1rem;
-    }
-
-    .close {
-      cursor: pointer;
-    }
-  }
 }
 </style>

@@ -66,7 +66,7 @@ export default {
 .intro-container {
   padding-top: 1rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
