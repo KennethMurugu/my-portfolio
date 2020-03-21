@@ -30,8 +30,12 @@ export default class PageHeader extends Vue {
 
 <style lang="scss" scoped>
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
   padding: 0 2rem;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
   .content {
     position: relative;
     display: flex;
