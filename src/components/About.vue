@@ -10,8 +10,8 @@
       <p @click="$emit('switchpage', 3)">Say Hi</p>
     </PageHeader>
 
-    <div class="content">
-      <div class="quote">
+    <div class="content ma-3">
+      <div class="quote py-4 px-5">
         <i class="fas fa-quote-left fa-lg quote-left"></i>
         <h2 class="text">Passion gets you further.</h2>
         <i class="fas fa-quote-right fa-lg quote-right"></i>
@@ -44,13 +44,12 @@ export default {
   overflow: auto;
 
   .content {
-    margin: 1.5rem;
+    // margin: 1.5rem;
   }
 }
 
 .quote {
   border: 2px solid #fff;
-  padding: 1rem 2rem;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
   max-width: 500px;
   margin: 2rem auto;
