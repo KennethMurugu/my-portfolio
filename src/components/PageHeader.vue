@@ -1,16 +1,16 @@
 <template>
-  <div class="header" :style="{background}">
-    <div class="dropdown-links" :class="{'hide': !showDropdown}">
+  <div class="header" :style="{ background }">
+    <div class="dropdown-links" :class="{ 'hide': !showDropdown }">
       <slot></slot>
     </div>
     <div class="content">
       <i class="fas fa-bars fa-lg dropdown-toggle" @click="showDropdown = !showDropdown"></i>
-      <h1 class="title">{{title}}</h1>
+      <h1 class="title">{{ title }}</h1>
       <div class="right-container">
         <div class="links">
           <slot></slot>
         </div>
-        <div class="close" @click="$emit('close')">
+        <div class="close" @click="$router.push('/')">
           <div class="bg"></div>
           <i class="fas fa-times fa-lg"></i>
         </div>
@@ -22,6 +22,7 @@
 <script>
 import Vue from 'vue'
 import Component from 'vue-class-component'
+
 @Component({ props: { title: '', background: '' } })
 export default class PageHeader extends Vue {
   showDropdown = false
@@ -30,12 +31,17 @@ export default class PageHeader extends Vue {
 
 <style lang="scss" scoped>
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   padding: 0 2rem;
   width: 100%;
   z-index: 9999;
   backdrop-filter: blur(5px);
+  transition: background-color 1.35s ease;
+
+  .title {
+    margin: 0.5rem 0;
+  }
   .content {
     position: relative;
     display: flex;
@@ -47,6 +53,10 @@ export default class PageHeader extends Vue {
 
   .dropdown-toggle {
     display: none;
+    cursor: pointer;
+    &:hover {
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
+    }
   }
 
   .right-container {
@@ -57,12 +67,14 @@ export default class PageHeader extends Vue {
       gap: 1rem;
       margin-right: 3rem;
       align-items: center;
+
       & * {
         margin: 0 0.75rem;
         cursor: pointer;
         border: 1px solid transparent;
         transition: all 0.2s ease;
         padding: 5px 15px;
+        color: #fff;
 
         &:hover {
           text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
@@ -100,10 +112,11 @@ export default class PageHeader extends Vue {
 
   .dropdown-links {
     background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
     position: absolute;
     width: 100%;
     left: 0;
-    top: 46px;
+    top: 100%;
     opacity: 1;
     text-align: center;
     transition: all 0.35s ease-in-out;
@@ -119,6 +132,8 @@ export default class PageHeader extends Vue {
     }
 
     & * {
+      color: #fff;
+      display: block;
       margin: 0;
       padding: 0.75rem 0;
       border: 3px solid transparent;

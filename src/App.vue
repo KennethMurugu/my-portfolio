@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <!-- <router-view /> -->
     <transition :name="selectedTransition" mode="out-in">
-      <HomePage v-on:switchpage="switchPage" v-if="page == 0" :key="0" />
+      <!-- <HomePage v-on:switchpage="switchPage" v-if="page == 0" :key="0" />
       <AboutPage v-on:switchpage="switchPage" v-if="page == 1" :key="1" />
-      <ProjectsPage v-on:switchpage="switchPage" v-if="page == 2" :key="2" />s
-      <SayHiPage v-on:switchpage="switchPage" v-if="page == 3" :key="3" />
+      <ProjectsPage v-on:switchpage="switchPage" v-if="page == 2" :key="2" />
+      <SayHiPage v-on:switchpage="switchPage" v-if="page == 3" :key="3" />-->
+      <router-view />
     </transition>
   </div>
 </template>
 
 <script>
-import HomePage from '@/views/Home'
-import AboutPage from '@/components/About'
-import ProjectsPage from '@/components/Projects'
-import SayHiPage from '@/components/SayHi'
+// import HomePage from '@/views/Home'
+// import AboutPage from '@/components/About'
+// import ProjectsPage from '@/components/Projects'
+// import SayHiPage from '@/components/SayHi'
 export default {
   data() {
     return {
@@ -23,11 +23,18 @@ export default {
       selectedTransition: 'home'
     }
   },
-  components: { HomePage, AboutPage, ProjectsPage, SayHiPage },
+  // components: { HomePage, AboutPage, ProjectsPage, SayHiPage },
   methods: {
     switchPage(page) {
       this.page = page
       this.selectedTransition = this.transitions[page]
+    }
+  },
+  watch: {
+    $route(to, from) {
+      if (to.meta.currentPage) {
+        this.$store.commit('setCurrentPage', to.meta.currentPage)
+      }
     }
   }
 }
