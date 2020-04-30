@@ -55,3 +55,15 @@ body {
 .text-justify {
   text-align: justify;
 }
+
+.skill-tooltip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .smiley {
+    font-size: 1.5rem;
+  }
+}
+.tippy-box {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.432);
+}

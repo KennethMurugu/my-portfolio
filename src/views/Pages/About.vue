@@ -53,9 +53,14 @@
             <i :class="`${skill.icon}`"></i>
             {{ skill.name }}
           </p>
-          <div class="bar">
-            <div class="fill" :style="{width: `${skill.percentage}%`}"></div>
-            <span class="percentage">{{ skill.percentage }}%</span>
+          <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
+            <!-- <div class="fill" :style="{width: `${skill.percentage}%`}"></div>
+            <span class="percentage">{{ skill.percentage }}%</span>-->
+            <span class="fill" :class="{'active': skill.percentage >= 1}">&#128528;</span>
+            <span class="fill" :class="{'active': skill.percentage >= 2}">&#128524;</span>
+            <span class="fill" :class="{'active': skill.percentage >= 3}">&#128522;</span>
+            <span class="fill" :class="{'active': skill.percentage >= 4}">&#128523;</span>
+            <span class="fill" :class="{'active': skill.percentage >= 5}">&#128513;</span>
           </div>
         </div>
       </div>
@@ -64,7 +69,9 @@
 </template>
 
 <script>
-// import PageHeader from '@/components/PageHeader'
+import tippy from 'tippy.js'
+import 'tippy.js/dist/tippy.css' // optional for styling
+
 export default {
   name: 'About',
   // components: { PageHeader },
@@ -74,45 +81,83 @@ export default {
         {
           name: 'UI/UX Design & Prototyping',
           icon: 'fas fa-palette',
-          percentage: 95
+          percentage: 4
         },
         {
           name: 'Vue.js',
           icon: 'fab fa-vuejs',
-          percentage: 90
+          percentage: 5
         },
         {
           name: 'React',
           icon: 'fab fa-react',
-          percentage: 80
+          percentage: 3
         },
         {
           name: 'Node.js',
           icon: 'fab fa-node-js',
-          percentage: 85
+          percentage: 4
         },
         {
           name: 'Bootstrap',
           icon: 'fab fa-bootstrap',
-          percentage: 95
+          percentage: 5
         },
         {
           name: 'Vuetify',
           icon: 'fab fa-vuejs',
-          percentage: 85
+          percentage: 4
         },
         {
           name: 'SASS/SCSS',
           icon: 'fab fa-sass',
-          percentage: 80
+          percentage: 4
+        }
+      ],
+      skillLevels: [
+        {
+          smiley: '&#128528',
+          description:
+            'This one is mostly new to me and I do not have much experience outside of Hello World Projects. '
+        },
+        {
+          smiley: '&#128524',
+          description:
+            "I'm just starting to learn this skill and have moved away from simple Hello World Projects."
+        },
+        {
+          smiley: '&#128522',
+          description:
+            'I have some experience in this area but there is definitely room for improvement.'
+        },
+        {
+          smiley: '&#128523',
+          description:
+            'I am quite comfortable with this skill and I have used it before in multiple projects.'
+        },
+        {
+          smiley: '&#128513',
+          description:
+            'I have used this skill extensively in multiple projects and understand it inside and out.'
         }
       ]
     }
   },
   methods: {
-    close() {
-      this.$emit('closeme')
+    getSkillTooltipContent(skillPercentage) {
+      const skill = this.skillLevels[skillPercentage - 1]
+
+      return `
+        <p class="skill-tooltip">
+          <span class="smiley">${skill.smiley}</span>
+          <span class="mx-3">&bull;</span>
+          <span>${skill.description}</span>
+        </p>
+      `
     }
+  },
+  mounted() {
+    tippy('[data-tippy-content]', { allowHTML: true })
   }
 }
 </script>
@@ -172,14 +217,28 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 1rem 2rem;
   .skill {
+    .title {
+      font-size: 1.2rem;
+    }
     .bar {
       position: relative;
-      background-color: #fff;
-      height: 20px;
+      // background-color: rgba(0, 0, 0, 0.164);
+      border-radius: 3px;
+      // display: grid;
+      // grid-template-columns: auto auto auto auto auto;
+      // height: 20px;
       .fill {
-        background-color: #00a651;
+        // background-color: #00a651;
         // width: 80%;
         height: 100%;
+        font-size: 1.25rem;
+        margin-right: 1rem;
+        filter: grayscale(100%);
+
+        &.active {
+          filter: grayscale(0%);
+          font-size: 1.5rem;
+        }
       }
       .percentage {
         position: absolute;

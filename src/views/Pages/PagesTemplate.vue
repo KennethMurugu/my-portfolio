@@ -1,7 +1,6 @@
 <template>
   <div>
     <PageHeader
-      class="header"
       :title="$store.state.currentPage.title"
       :background="headerColors[$store.state.currentPage.name]"
       v-on:close="$emit('switchpage', 0)"
