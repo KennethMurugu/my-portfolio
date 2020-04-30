@@ -122,13 +122,19 @@ export default class PageHeader extends Vue {
     transition: all 0.35s ease-in-out;
     z-index: 1;
     transform-origin: top;
-    transform: scaleY(1);
+    // transform: scaleY(1);
+    overflow: hidden;
+    height: 6rem;
+
+    a {
+      height: 3rem;
+    }
 
     &.hide {
-      opacity: 0;
+      // opacity: 0;
       visibility: hidden;
-      transform: scaleY(0);
-      // top: 55px;
+      // transform: scaleY(0);
+      height: 0px;
     }
 
     & * {
