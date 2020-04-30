@@ -1,20 +1,25 @@
 <template>
   <div class="home page" ref="home-page">
     <div class="intro-container">
-      <div class="social-link-container left">
-        <a href="https://github.com/KennethMurugu/">
-          <i class="fab fa-github"></i>
-        </a>
+      <div class="row-1">
+        <div class="social-link-container left">
+          <a href="https://github.com/KennethMurugu/">
+            <i class="fab fa-github-square icon"></i>
+            <p class="mb-0 mt-3 text">Github</p>
+          </a>
+        </div>
+        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-3" />
+        <div class="social-link-container right">
+          <a href="https://twitter.com/NOTzeroday">
+            <i class="fab fa-twitter-square icon"></i>
+            <p class="mb-0 mt-3 text">Twitter</p>
+          </a>
+        </div>
       </div>
+
       <div class="personal-details">
-        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me" />
         <h1 class="name">Kenneth Kimotho</h1>
         <p class="title">UI/UX Designer, Front-end Developer</p>
-      </div>
-      <div class="social-link-container right">
-        <a href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
       </div>
     </div>
 
@@ -71,39 +76,64 @@ export default {
   text-align: center;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto;
   align-items: center;
 
+  .row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .social-link-container {
-    align-self: flex-start;
     padding-top: 2rem;
 
     a {
       color: #fff;
-      font-size: 2.5rem;
       display: inline-block;
-      text-shadow: 0px 0px 25px #00000078;
       transition: all 0.2s ease;
 
+      .icon {
+        font-size: 2.75rem;
+        text-shadow: 0px 0px 25px #000000e7;
+        transition: all 0.2s ease;
+      }
+      .text {
+        opacity: 0;
+        font-size: 1.1rem;
+        transform: translateY(-15px);
+        transition: all 0.2s ease;
+      }
+
       &:hover {
-        transform: scale(1.2);
-        text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.623);
+        .icon {
+          transform: scale(1.2);
+          text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.623);
+        }
+        .text {
+          opacity: 1;
+          transform: translateY(0px);
+        }
       }
     }
   }
-}
-.intro-container {
-  .name,
-  .title {
-    margin: 0.2rem 0;
+  // end social-link-container
+
+  .avatar-me {
+    width: 50%;
+    max-width: 460px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px #00000078;
+  }
+
+  .personal-details {
+    .name,
+    .title {
+      margin: 0.2rem 0;
+    }
   }
 }
-.avatar-me {
-  width: 50%;
-  max-width: 460px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 25px #00000078;
-}
+//end intro-container
 
 .main-links-container {
   width: 100%;
