@@ -19,7 +19,7 @@
 
       <div class="personal-details">
         <h1 class="name">Kenneth Kimotho</h1>
-        <p class="title">UI/UX Designer, Front-end Developer</p>
+        <p class="title">Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer</p>
       </div>
     </div>
 
@@ -120,7 +120,7 @@ export default {
   // end social-link-container
 
   .avatar-me {
-    width: 50%;
+    width: 40%;
     max-width: 460px;
     border-radius: 50%;
     box-shadow: 0px 0px 25px #00000078;
@@ -213,6 +213,18 @@ export default {
     grid-template-columns: auto;
     a {
       font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-links-container a {
+    border-width: 5px;
+    padding: 1rem 5rem;
+    font-size: 1.25rem;
+
+    & + .pulse {
+      border-width: 5px;
     }
   }
 }
