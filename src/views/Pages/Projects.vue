@@ -13,8 +13,8 @@
       <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
       <div class="speech pa-5 pl-12">
         <p>
-          Have a look at some of the projects I've worked on, with links to Github and demos where applicable.
-          <span>&#128512;</span>
+          Have a look at some of the projects I've worked on, with links to the Github source and demos where applicable.
+          <span>&#128516;</span>
         </p>
       </div>
     </div>
