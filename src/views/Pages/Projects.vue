@@ -1,5 +1,5 @@
 <template>
-  <div class="page projects">
+  <div class="page projects pb-5">
     <!-- <div class="header mx-auto mb-12">
       <div class="icons-container">
         <i class="fas fa-laptop-code fa-7x icon"></i>
@@ -9,7 +9,7 @@
       </div>
     </div>-->
 
-    <div class="speech-container mx-auto">
+    <div class="speech-container mx-auto mb-12">
       <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
       <div class="speech pa-5 pl-12">
         <p>
@@ -18,14 +18,44 @@
         </p>
       </div>
     </div>
+
+    <div class="project-list">
+      <ProjectSummaryCard v-for="(item, index) in projectList" :key="index" :project="item" />
+    </div>
   </div>
 </template>
 
 <script>
-// import PageHeader from '@/components/PageHeader'
+import ProjectSummaryCard from '@/components/ProjectSummaryCard'
 export default {
   name: 'Projects',
-  // components: { PageHeader },
+  components: { ProjectSummaryCard },
+  data() {
+    return {
+      projectList: [
+        {
+          thumbnail: 'project-1.png',
+          title: 'Some Title',
+          description: 'Some awesome description here'
+        },
+        {
+          thumbnail: 'project-1.png',
+          title: 'Some Title',
+          description: 'Some awesome description here'
+        },
+        {
+          thumbnail: 'project-1.png',
+          title: 'Some Title',
+          description: 'Some awesome description here'
+        },
+        {
+          thumbnail: 'project-1.png',
+          title: 'Some Title',
+          description: 'Some awesome description here'
+        }
+      ]
+    }
+  },
   methods: {
     close() {
       this.$emit('closeme')
@@ -96,6 +126,20 @@ export default {
     // backdrop-filter: blur(5px);
     z-index: 1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.507);
+  }
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .project-list {
+    grid-template-columns: auto;
   }
 }
 </style>
