@@ -3,12 +3,11 @@
     <PageHeader
       :title="$store.state.currentPage.title"
       :background="headerColors[$store.state.currentPage.name]"
-      v-on:close="$emit('switchpage', 0)"
     >
       <!-- <p @click="$emit('switchpage', 2)">Projects</p>
       <p @click="$emit('switchpage', 3)">Say Hi</p>-->
       <template v-if="$store.state.currentPage.name == 'about'">
-        <router-link to="/pages/projects" @click="$emit('linkclicked')">Projects</router-link>
+        <router-link to="/pages/projects">Projects</router-link>
         <router-link to="/pages/sayhi">Say Hi</router-link>
       </template>
       <template v-if="$store.state.currentPage.name == 'projects'">
@@ -34,9 +33,9 @@ export default {
   data() {
     return {
       headerColors: {
-        about: '#924848d4',
-        projects: '#5f0e99',
-        sayhi: '#15acd1'
+        about: '#320a60', //924848d4
+        projects: '#581827', //5f0e99
+        sayhi: '#016881'
       }
     }
   }

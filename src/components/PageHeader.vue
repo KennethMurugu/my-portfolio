@@ -1,13 +1,18 @@
 <template>
   <div class="header" :style="{ background }">
-    <div class="dropdown-links" :class="{ 'hide': !showDropdown }">
+    <div
+      class="dropdown-links"
+      ref="dropdown-links"
+      :class="{ 'hide': !showDropdown }"
+      @click="close"
+    >
       <slot></slot>
     </div>
     <div class="content">
       <i class="fas fa-bars fa-lg dropdown-toggle" @click="showDropdown = !showDropdown"></i>
       <h1 class="title">{{ title }}</h1>
       <div class="right-container">
-        <div class="links">
+        <div class="links" @click="resetScroll">
           <slot></slot>
         </div>
         <div class="close" @click="$router.push('/')">
@@ -20,12 +25,24 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Component from 'vue-class-component'
-
-@Component({ props: { title: '', background: '' } })
-export default class PageHeader extends Vue {
-  showDropdown = false
+export default {
+  name: 'PageHeader',
+  props: {
+    title: String,
+    background: String
+  },
+  data() {
+    return { showDropdown: false }
+  },
+  methods: {
+    close() {
+      this.showDropdown = !this.showDropdown
+      this.resetScroll()
+    },
+    resetScroll() {
+      window.scrollTo({ left: 0, top: 0, behavior: 'auto' })
+    }
+  }
 }
 </script>
 
@@ -69,12 +86,14 @@ export default class PageHeader extends Vue {
       align-items: center;
 
       & * {
-        margin: 0 0.75rem;
+        // margin: 0 0.75rem;
         cursor: pointer;
         border: 1px solid transparent;
         transition: all 0.2s ease;
         padding: 5px 15px;
         color: #fff;
+        width: 100px;
+        text-align: center;
 
         &:hover {
           text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);

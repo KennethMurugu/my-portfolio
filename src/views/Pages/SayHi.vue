@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .say-hi {
-  background: #0c90b1;
+  background: #007795;
   display: block;
   padding: 0;
   overflow: auto;

@@ -25,7 +25,7 @@ export default {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.445);
   max-width: 350px;
   overflow: hidden;
-  background-color: #192139;
+  background-color: #4a111c;
   transition: all 0.25s ease;
 
   &:hover {

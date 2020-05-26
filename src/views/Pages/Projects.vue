@@ -34,24 +34,24 @@ export default {
     return {
       projectList: [
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'project-1.jpg',
+          title: 'Title',
+          description: 'Description here'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'project-1.jpg',
+          title: 'Title',
+          description: 'Description here'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'project-1.jpg',
+          title: 'Title',
+          description: 'Description here'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'project-1.jpg',
+          title: 'Title',
+          description: 'Description here'
         }
       ]
     }
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  background: #460476;
+  background: #641b2b;
   display: block;
   padding: 0;
 }

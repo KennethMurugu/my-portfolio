@@ -48,9 +48,9 @@
       <p>In a nutshell, my skillset encompasses most of the front-end development process, from design/protyping/wireframing to the actual get-your-hands-dirty programming implementation.</p>
 
       <div class="skills-list">
-        <div class="skill" v-for="(skill, index) in skills" :key="index">
-          <p class="title mb-1">
-            <i :class="`${skill.icon}`"></i>
+        <div class="skill pa-3" v-for="(skill, index) in skills" :key="index">
+          <p class="title mb-1 mt-0">
+            <i :class="`${skill.icon} mr-1`" :style="`color:${skill.color};`"></i>
             {{ skill.name }}
           </p>
           <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
@@ -81,37 +81,44 @@ export default {
         {
           name: 'UI/UX Design & Prototyping',
           icon: 'fas fa-palette',
-          percentage: 4
+          percentage: 4,
+          color: '#d36214'
         },
         {
           name: 'Vue.js',
           icon: 'fab fa-vuejs',
-          percentage: 5
+          percentage: 5,
+          color: '#5dc18e'
         },
         {
           name: 'React',
           icon: 'fab fa-react',
-          percentage: 3
+          percentage: 3,
+          color: '#6ddafb'
         },
         {
           name: 'Node.js',
           icon: 'fab fa-node-js',
-          percentage: 4
+          percentage: 4,
+          color: '#326e03'
         },
         {
           name: 'Bootstrap',
           icon: 'fab fa-bootstrap',
-          percentage: 5
+          percentage: 5,
+          color: '#7851b2'
         },
         {
           name: 'Vuetify',
           icon: 'fab fa-vuejs',
-          percentage: 4
+          percentage: 4,
+          color: '#5dc18e'
         },
         {
           name: 'SASS/SCSS',
           icon: 'fab fa-sass',
-          percentage: 4
+          percentage: 4,
+          color: '#bf4080'
         }
       ],
       skillLevels: [
@@ -164,7 +171,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  background: #682525;
+  background: #3d0083;
   display: block;
   padding: 0;
   overflow: auto;
@@ -196,7 +203,6 @@ export default {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
   max-width: 500px;
   background-color: rgba(0, 0, 0, 0.267);
-  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
 
@@ -217,6 +223,14 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 1rem 2rem;
   .skill {
+    background-color: rgba(0, 0, 0, 0.24);
+    border-radius: 3px;
+    text-align: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+    }
     .title {
       font-size: 1.2rem;
     }
@@ -249,7 +263,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
   .skills-list {
     grid-template-columns: auto;
   }
