@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="content">
-      <i class="fas fa-bars fa-lg dropdown-toggle" @click="showDropdown = !showDropdown"></i>
+      <fa-icon class="fa-lg dropdown-toggle" icon="bars" @click="showDropdown = !showDropdown"></fa-icon>
       <h1 class="title">{{ title }}</h1>
       <div class="right-container">
         <div class="links">
@@ -12,7 +12,7 @@
         </div>
         <div class="close" @click="$router.push('/')">
           <div class="bg"></div>
-          <i class="fas fa-times fa-lg"></i>
+          <fa-icon class="fa-lg" icon="times"></fa-icon>
         </div>
       </div>
     </div>

@@ -8,17 +8,21 @@
     <div class="page-content px-3">
       <div class="speech-container mx-auto mb-6">
         <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
-        <div class="speech pa-5 pl-12">
+        <div class="speech pa-5">
           <p>
             Have a look at some of the projects I've worked on, with links to the Github source and demos where applicable.
             <span>&#128516;</span>
           </p>
         </div>
       </div>
-    </div>
 
-    <div class="project-list">
-      <ProjectSummaryCard v-for="(project, index) in projectList" :key="index" :project="project" />
+      <div class="project-list">
+        <ProjectSummaryCard
+          v-for="(project, index) in projectList"
+          :key="index"
+          :project="project"
+        />
+      </div>
     </div>
   </div>
 </template>

@@ -7,9 +7,11 @@
 
     <div class="page-content px-3">
       <div class="quote py-4 px-5 mb-10 mx-auto">
-        <i class="fas fa-quote-left fa-lg quote-left"></i>
+        <!-- <i class="fas fa-quote-left fa-lg quote-left"></i> -->
+        <fa-icon class="fa-lg quote-left" icon="quote-left"></fa-icon>
         <h2 class="text">Passion gets you further.</h2>
-        <i class="fas fa-quote-right fa-lg quote-right"></i>
+        <!-- <i class="fas fa-quote-right fa-lg quote-right"></i> -->
+        <fa-icon class="fa-lg quote-right" icon="quote-right"></fa-icon>
         <p class="author">
           <em>- Charles Karitu</em>
         </p>
@@ -18,7 +20,8 @@
       <section class="section mx-auto mb-12">
         <div class="section-header">
           <span class="icon mr-4 py-2">
-            <i class="fas fa-bolt"></i>
+            <!-- <i class="fas fa-bolt"></i> -->
+            <fa-icon icon="bolt"></fa-icon>
           </span>
           <span class="text">My Motivation</span>
         </div>
@@ -37,6 +40,7 @@
         <div class="section-header">
           <span class="icon mr-4 py-2">
             <i class="fas fa-laptop-code"></i>
+            <fa-icon icon="laptop-code"></fa-icon>
           </span>
           <span class="text">Skills</span>
         </div>
@@ -44,9 +48,12 @@
         <p>In a nutshell, my skillset encompasses most of the front-end development process, from design/protyping/wireframing to the actual get-your-hands-dirty programming implementation.</p>
 
         <div class="skills-list">
-          <div class="skill" v-for="(skill, index) in skills" :key="index">
-            <p class="title mb-1">
-              <i :class="`${skill.icon}`"></i>
+          <div class="skill pa-3" v-for="(skill, index) in skills" :key="index">
+            <p class="title mb-1 mt-0">
+              <!-- <i :class="`${skill.icon}`"></i> -->
+              <span :style="`color:${skill.color};`">
+                <fa-icon :icon="skill.icon" class="mr-1"></fa-icon>
+              </span>
               {{ skill.name }}
             </p>
             <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
@@ -76,38 +83,52 @@ export default {
       skills: [
         {
           name: 'UI/UX Design & Prototyping',
-          icon: 'fas fa-palette',
-          percentage: 4
+          icon: 'palette',
+          isBrand: false,
+          percentage: 4,
+          color: '#d36214'
         },
         {
           name: 'Vue.js',
-          icon: 'fab fa-vuejs',
-          percentage: 5
+          icon: ['fab', 'vuejs'],
+          isBrand: true,
+          percentage: 5,
+          color: '#5dc18e'
         },
         {
           name: 'React',
-          icon: 'fab fa-react',
-          percentage: 3
+          icon: ['fab', 'react'],
+          isBrand: true,
+          percentage: 3,
+          color: '#6ddafb'
         },
         {
           name: 'Node.js',
-          icon: 'fab fa-node-js',
-          percentage: 4
+          icon: ['fab', 'node-js'],
+          isBrand: true,
+          percentage: 4,
+          color: '#326e03'
         },
         {
           name: 'Bootstrap',
-          icon: 'fab fa-bootstrap',
-          percentage: 5
+          icon: ['fab', 'bootstrap'],
+          isBrand: true,
+          percentage: 5,
+          color: '#7851b2'
         },
         {
           name: 'Vuetify',
-          icon: 'fab fa-vuejs',
-          percentage: 4
+          icon: ['fab', 'vuejs'],
+          isBrand: true,
+          percentage: 4,
+          color: '#5dc18e'
         },
         {
           name: 'SASS/SCSS',
-          icon: 'fab fa-sass',
-          percentage: 4
+          icon: ['fab', 'sass'],
+          isBrand: true,
+          percentage: 4,
+          color: '#bf4080'
         }
       ],
       skillLevels: [
@@ -212,6 +233,15 @@ export default {
   grid-template-columns: 1fr 1fr;
   gap: 1rem 2rem;
   .skill {
+    background-color: rgba(0, 0, 0, 0.24);
+    border-radius: 3px;
+    text-align: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+    }
+
     .title {
       font-size: 1.2rem;
     }
@@ -244,7 +274,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 630px) {
   .skills-list {
     grid-template-columns: auto;
     text-align: center;
