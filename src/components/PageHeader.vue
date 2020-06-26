@@ -73,19 +73,19 @@ export default {
       margin-right: 3rem;
       align-items: center;
 
-      & * {
-        margin: 0 0.75rem;
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition: all 0.2s ease;
-        padding: 5px 15px;
-        color: #fff;
+      // & * {
+      //   margin: 0 0.75rem;
+      //   cursor: pointer;
+      //   border: 1px solid transparent;
+      //   transition: all 0.2s ease;
+      //   padding: 5px 15px;
+      //   color: #fff;
 
-        &:hover {
-          text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
-          border-color: #fff;
-        }
-      }
+      //   &:hover {
+      //     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
+      //     border-color: #fff;
+      //   }
+      // }
     }
 
     .close {

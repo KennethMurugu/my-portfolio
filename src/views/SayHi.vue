@@ -1,8 +1,8 @@
 <template>
   <div class="page say-hi">
     <PageHeader title="Say Hi" class="mb-12">
-      <router-link to="/about" @click="$emit('linkclicked')">About</router-link>
-      <router-link to="/projects">Projects</router-link>
+      <router-link to="/about" class="btn flat">About</router-link>
+      <router-link to="/projects" class="btn flat">Projects</router-link>
     </PageHeader>
 
     <div class="page-content px-3">

@@ -71,7 +71,7 @@ body {
   padding: 0.5rem 2rem;
   background-color: rgba(0, 0, 0, 0.541);
   display: block;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition: all 0.2s ease, transform 0.1s;
   border-radius: 3px;
   cursor: pointer;
@@ -84,5 +84,16 @@ body {
   &:active {
     transform: scale(0.925);
     outline: none;
+  }
+
+  &.flat {
+    background-color: transparent;
+    border-color: transparent;
+
+    &:hover,
+    &:active {
+      background-color: rgba(0, 0, 0, 0.341);
+      border-color: #fff;
+    }
   }
 }

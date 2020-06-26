@@ -1,8 +1,8 @@
 <template>
   <div class="page projects">
     <PageHeader title="Projects" class="mb-6">
-      <router-link to="/about">About</router-link>
-      <router-link to="/sayhi">Say Hi</router-link>
+      <router-link to="/about" class="btn flat">About</router-link>
+      <router-link to="/sayhi" class="btn flat">Say Hi</router-link>
     </PageHeader>
 
     <div class="page-content px-3">
@@ -36,27 +36,6 @@ export default {
   data() {
     return {
       projectList: [
-        {
-          thumbnail: 'shopio-thumb.png',
-          title: 'Shopio Ecommerce',
-          description: 'A simple one-page concept for an ecommerce storefront.',
-          link: process.env.VUE_APP_SHOPIO_URL,
-          source: 'https://github.com/KennethMurugu/ecommerce-store'
-        },
-        {
-          thumbnail: 'shopio-thumb.png',
-          title: 'Shopio Ecommerce',
-          description: 'A simple one-page concept for an ecommerce storefront.',
-          link: process.env.VUE_APP_SHOPIO_URL,
-          source: 'https://github.com/KennethMurugu/ecommerce-store'
-        },
-        {
-          thumbnail: 'shopio-thumb.png',
-          title: 'Shopio Ecommerce',
-          description: 'A simple one-page concept for an ecommerce storefront.',
-          link: process.env.VUE_APP_SHOPIO_URL,
-          source: 'https://github.com/KennethMurugu/ecommerce-store'
-        },
         {
           thumbnail: 'shopio-thumb.png',
           title: 'Shopio Ecommerce',

@@ -1,8 +1,8 @@
 <template>
   <div class="page about" ref="about-page">
     <PageHeader title="About" class="mb-12">
-      <router-link to="/projects" @click="$emit('linkclicked')">Projects</router-link>
-      <router-link to="/sayhi">Say Hi</router-link>
+      <router-link to="/projects" class="btn flat">Projects</router-link>
+      <router-link to="/sayhi" class="btn flat">Say Hi</router-link>
     </PageHeader>
 
     <div class="page-content px-3">
@@ -191,6 +191,8 @@ export default {
     max-width: 900px;
     .section-header {
       background-color: rgba(0, 0, 0, 0.349);
+      border-radius: 3px;
+      overflow: hidden;
 
       .icon {
         display: inline-block;
@@ -215,6 +217,7 @@ export default {
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
+  border-radius: 3px;
 
   .text {
     text-align: center;

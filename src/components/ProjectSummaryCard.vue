@@ -10,8 +10,14 @@
       class="thumbnail"
     />
     <div class="footer">
-      <button class="btn" @click="visit(project.link)">VISIT</button>
-      <button class="btn" @click="visit(project.source)">SOURCE</button>
+      <button class="btn" @click="visit(project.link)">
+        VISIT
+        <fa-icon icon="external-link-alt" class="ml-1"></fa-icon>
+      </button>
+      <button class="btn" @click="visit(project.source)">
+        GITHUB
+        <fa-icon :icon="['fab', 'github-square']" class="ml-1 fa-lg"></fa-icon>
+      </button>
     </div>
   </div>
 </template>
@@ -35,14 +41,13 @@ export default {
   max-width: 350px;
   // background-color: #192139;
   transition: all 0.25s ease;
-  cursor: pointer;
   // display: grid;
   // grid-template-columns: 350px 250px;
   // column-gap: 1rem;
   text-align: center;
 
   .thumbnail {
-    border-radius: 5px;
+    border-radius: 3px;
     width: 100%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.445);
     transition: all 0.2s ease;
