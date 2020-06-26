@@ -27,7 +27,7 @@
         </div>
 
         <p class="text-justify">
-          If my life is a recipe, then
+          My work is a recipe and
           <b>passion</b> is the secret sauce. It drives me as an individual and
           helps make my work stand-out.
         </p>
@@ -51,8 +51,8 @@
 
         <p>
           In a nutshell, my skillset encompasses most of the front-end
-          development process, from design/protyping/wireframing to the actual
-          get-your-hands-dirty programming implementation.
+          development process, from design/protyping/wireframing to the
+          get-your-hands-dirty programming side of things.
         </p>
 
         <div class="skills-list">
@@ -64,25 +64,12 @@
               </span>
               {{ skill.name }}
             </p>
-            <div
-              class="bar"
-              :data-tippy-content="getSkillTooltipContent(skill.percentage)"
-            >
-              <span class="fill" :class="{ active: skill.percentage >= 1 }"
-                >&#128528;</span
-              >
-              <span class="fill" :class="{ active: skill.percentage >= 2 }"
-                >&#128524;</span
-              >
-              <span class="fill" :class="{ active: skill.percentage >= 3 }"
-                >&#128522;</span
-              >
-              <span class="fill" :class="{ active: skill.percentage >= 4 }"
-                >&#128523;</span
-              >
-              <span class="fill" :class="{ active: skill.percentage >= 5 }"
-                >&#128513;</span
-              >
+            <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
+              <span class="fill" :class="{ active: skill.percentage >= 1 }">&#128528;</span>
+              <span class="fill" :class="{ active: skill.percentage >= 2 }">&#128524;</span>
+              <span class="fill" :class="{ active: skill.percentage >= 3 }">&#128522;</span>
+              <span class="fill" :class="{ active: skill.percentage >= 4 }">&#128523;</span>
+              <span class="fill" :class="{ active: skill.percentage >= 5 }">&#128513;</span>
             </div>
           </div>
         </div>
