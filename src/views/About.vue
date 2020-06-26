@@ -1,80 +1,76 @@
 <template>
   <div class="page about" ref="about-page">
-    <!-- <PageHeader
-      class="header"
-      title="About"
-      background="#924848d4"
-      v-on:close="$emit('switchpage', 0)"
-    >
-      <p @click="$emit('switchpage', 2)">Projects</p>
-      <p @click="$emit('switchpage', 3)">Say Hi</p>
-    </PageHeader>-->
+    <PageHeader title="About" class="mb-12">
+      <router-link to="/projects" @click="$emit('linkclicked')">Projects</router-link>
+      <router-link to="/sayhi">Say Hi</router-link>
+    </PageHeader>
 
-    <div class="quote py-4 px-5 mb-10 mx-auto">
-      <i class="fas fa-quote-left fa-lg quote-left"></i>
-      <h2 class="text">Passion gets you further.</h2>
-      <i class="fas fa-quote-right fa-lg quote-right"></i>
-      <p class="author">
-        <em>- Charles Karitu</em>
-      </p>
-    </div>
-
-    <section class="section mx-auto mb-12">
-      <div class="section-header">
-        <span class="icon mr-4 py-2">
-          <i class="fas fa-bolt"></i>
-        </span>
-        <span class="text">My Motivation</span>
+    <div class="page-content px-3">
+      <div class="quote py-4 px-5 mb-10 mx-auto">
+        <i class="fas fa-quote-left fa-lg quote-left"></i>
+        <h2 class="text">Passion gets you further.</h2>
+        <i class="fas fa-quote-right fa-lg quote-right"></i>
+        <p class="author">
+          <em>- Charles Karitu</em>
+        </p>
       </div>
 
-      <p class="text-justify">
-        If my life is a recipe, then
-        <b>passion</b> is the secret sauce. It drives me as an individual and helps make my work stand-out.
-      </p>
-      <p>
-        I love to code. I love making the software that I produce look and
-        <b>feel</b> good to use, which is why I became a UI/UX designer and Front-end developer. I love the details, the nitty gritties of UI design and taking the time to make sure the end-user of my software has the best possible experience.
-      </p>
-    </section>
+      <section class="section mx-auto mb-12">
+        <div class="section-header">
+          <span class="icon mr-4 py-2">
+            <i class="fas fa-bolt"></i>
+          </span>
+          <span class="text">My Motivation</span>
+        </div>
 
-    <section class="section mx-auto mb-12">
-      <div class="section-header">
-        <span class="icon mr-4 py-2">
-          <i class="fas fa-laptop-code"></i>
-        </span>
-        <span class="text">Skills</span>
-      </div>
+        <p class="text-justify">
+          If my life is a recipe, then
+          <b>passion</b> is the secret sauce. It drives me as an individual and helps make my work stand-out.
+        </p>
+        <p>
+          I love to code. I love making the software that I produce look and
+          <b>feel</b> good to use, which is why I became a UI/UX designer and Front-end developer. I love the details, the nitty gritties of UI design and taking the time to make sure the end-user of my software has the best possible experience.
+        </p>
+      </section>
 
-      <p>In a nutshell, my skillset encompasses most of the front-end development process, from design/protyping/wireframing to the actual get-your-hands-dirty programming implementation.</p>
+      <section class="section mx-auto mb-12">
+        <div class="section-header">
+          <span class="icon mr-4 py-2">
+            <i class="fas fa-laptop-code"></i>
+          </span>
+          <span class="text">Skills</span>
+        </div>
 
-      <div class="skills-list">
-        <div class="skill" v-for="(skill, index) in skills" :key="index">
-          <p class="title mb-1">
-            <i :class="`${skill.icon}`"></i>
-            {{ skill.name }}
-          </p>
-          <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
-            <!-- <div class="fill" :style="{width: `${skill.percentage}%`}"></div>
-            <span class="percentage">{{ skill.percentage }}%</span>-->
-            <span class="fill" :class="{'active': skill.percentage >= 1}">&#128528;</span>
-            <span class="fill" :class="{'active': skill.percentage >= 2}">&#128524;</span>
-            <span class="fill" :class="{'active': skill.percentage >= 3}">&#128522;</span>
-            <span class="fill" :class="{'active': skill.percentage >= 4}">&#128523;</span>
-            <span class="fill" :class="{'active': skill.percentage >= 5}">&#128513;</span>
+        <p>In a nutshell, my skillset encompasses most of the front-end development process, from design/protyping/wireframing to the actual get-your-hands-dirty programming implementation.</p>
+
+        <div class="skills-list">
+          <div class="skill" v-for="(skill, index) in skills" :key="index">
+            <p class="title mb-1">
+              <i :class="`${skill.icon}`"></i>
+              {{ skill.name }}
+            </p>
+            <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
+              <span class="fill" :class="{'active': skill.percentage >= 1}">&#128528;</span>
+              <span class="fill" :class="{'active': skill.percentage >= 2}">&#128524;</span>
+              <span class="fill" :class="{'active': skill.percentage >= 3}">&#128522;</span>
+              <span class="fill" :class="{'active': skill.percentage >= 4}">&#128523;</span>
+              <span class="fill" :class="{'active': skill.percentage >= 5}">&#128513;</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css' // optional for styling
+import PageHeader from '@/components/PageHeader'
 
 export default {
   name: 'About',
-  // components: { PageHeader },
+  components: { PageHeader },
   data() {
     return {
       skills: [
@@ -164,10 +160,9 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  background: #682525;
   display: block;
   padding: 0;
-  overflow: auto;
+  // overflow: auto;
 
   // .content {
   //   margin-top: 7rem;
@@ -249,9 +244,10 @@ export default {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .skills-list {
     grid-template-columns: auto;
+    text-align: center;
   }
 }
 </style>

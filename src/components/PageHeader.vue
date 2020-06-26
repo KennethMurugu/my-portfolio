@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :style="{ background }">
+  <div class="header">
     <div class="dropdown-links" :class="{ 'hide': !showDropdown }">
       <slot></slot>
     </div>
@@ -20,12 +20,16 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Component from 'vue-class-component'
-
-@Component({ props: { title: '', background: '' } })
-export default class PageHeader extends Vue {
-  showDropdown = false
+export default {
+  name: 'PageHeader',
+  props: {
+    title: { type: String, default: '' }
+  },
+  data() {
+    return {
+      showDropdown: false
+    }
+  }
 }
 </script>
 
@@ -38,6 +42,7 @@ export default class PageHeader extends Vue {
   z-index: 9999;
   backdrop-filter: blur(5px);
   transition: background-color 1.35s ease;
+  background-color: rgba(0, 0, 0, 0.452);
 
   .title {
     margin: 0.5rem 0;

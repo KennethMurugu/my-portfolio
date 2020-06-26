@@ -1,21 +1,19 @@
 <template>
-  <div class="page projects pb-5">
-    <!-- <div class="header mx-auto mb-12">
-      <div class="icons-container">
-        <i class="fas fa-laptop-code fa-7x icon"></i>
-        <i class="fas fa-palette fa-4x icon"></i>
-        <i class="fab fa-node-js fa-4x icon"></i>
-        <i class="fab fa-vuejs fa-7x icon"></i>
-      </div>
-    </div>-->
+  <div class="page projects">
+    <PageHeader title="Projects" class="mb-12">
+      <router-link to="/about">About</router-link>
+      <router-link to="/sayhi">Say Hi</router-link>
+    </PageHeader>
 
-    <div class="speech-container mx-auto mb-12">
-      <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
-      <div class="speech pa-5 pl-12">
-        <p>
-          Have a look at some of the projects I've worked on, with links to the Github source and demos where applicable.
-          <span>&#128516;</span>
-        </p>
+    <div class="page-content px-3">
+      <div class="speech-container mx-auto">
+        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
+        <div class="speech pa-5 pl-12">
+          <p>
+            Have a look at some of the projects I've worked on, with links to the Github source and demos where applicable.
+            <span>&#128516;</span>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -66,14 +64,9 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  background: #460476;
+  // background: #460476;
   display: block;
   padding: 0;
-}
-.header {
-  width: 90%;
-  max-width: 500px;
-  padding-top: 5rem;
 }
 
 .icons-container {

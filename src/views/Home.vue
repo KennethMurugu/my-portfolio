@@ -26,17 +26,17 @@
     <div class="main-links-container">
       <div class="link-container" ref="btnAboutMe">
         <!-- <a href="#" class="link about-me" ref="btnAboutMe" @click="$router.go('/home')">ABOUT ME</a> -->
-        <router-link class="link about-me" to="/pages/about">About Me</router-link>
+        <router-link class="link about-me" to="/about">About Me</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnProjects">
         <!-- <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a> -->
-        <router-link class="link projects" to="/pages/projects">Projects</router-link>
+        <router-link class="link projects" to="/projects">Projects</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnSayHi">
         <!-- <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a> -->
-        <router-link class="link say-hi" to="/pages/sayhi">Say Hi</router-link>
+        <router-link class="link say-hi" to="/sayhi">Say Hi</router-link>
         <div class="pulse"></div>
       </div>
     </div>
@@ -47,24 +47,28 @@
 export default {
   name: 'Home',
   mounted() {
-    const home = document.querySelector('body')
+    const body = document.querySelector('body')
     this.$refs['btnAboutMe'].addEventListener('mouseenter', function() {
-      home.classList.add('about-me-hovered')
+      body.classList.add('about-me-hovered')
     })
     this.$refs['btnAboutMe'].addEventListener('mouseleave', function() {
-      home.classList.remove('about-me-hovered')
+      body.classList.remove('about-me-hovered')
     })
+    this.$refs['btnAboutMe'].addEventListener('click', function() {
+      body.classList.remove('about-me-hovered')
+    })
+
     this.$refs['btnProjects'].addEventListener('mouseenter', function() {
-      home.classList.add('projects-hovered')
+      body.classList.add('projects-hovered')
     })
     this.$refs['btnProjects'].addEventListener('mouseleave', function() {
-      home.classList.remove('projects-hovered')
+      body.classList.remove('projects-hovered')
     })
     this.$refs['btnSayHi'].addEventListener('mouseenter', function() {
-      home.classList.add('say-hi-hovered')
+      body.classList.add('say-hi-hovered')
     })
     this.$refs['btnSayHi'].addEventListener('mouseleave', function() {
-      home.classList.remove('say-hi-hovered')
+      body.classList.remove('say-hi-hovered')
     })
   }
 }
