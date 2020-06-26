@@ -1,12 +1,12 @@
 <template>
   <div class="page projects">
-    <PageHeader title="Projects" class="mb-12">
+    <PageHeader title="Projects" class="mb-6">
       <router-link to="/about">About</router-link>
       <router-link to="/sayhi">Say Hi</router-link>
     </PageHeader>
 
     <div class="page-content px-3">
-      <div class="speech-container mx-auto">
+      <div class="speech-container mx-auto mb-6">
         <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
         <div class="speech pa-5 pl-12">
           <p>
@@ -18,38 +18,47 @@
     </div>
 
     <div class="project-list">
-      <ProjectSummaryCard v-for="(item, index) in projectList" :key="index" :project="item" />
+      <ProjectSummaryCard v-for="(project, index) in projectList" :key="index" :project="project" />
     </div>
   </div>
 </template>
 
 <script>
 import ProjectSummaryCard from '@/components/ProjectSummaryCard'
+import PageHeader from '@/components/PageHeader'
 export default {
   name: 'Projects',
-  components: { ProjectSummaryCard },
+  components: { ProjectSummaryCard, PageHeader },
   data() {
     return {
       projectList: [
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'shopio-thumb.png',
+          title: 'Shopio Ecommerce',
+          description: 'A simple one-page concept for an ecommerce storefront.',
+          link: process.env.VUE_APP_SHOPIO_URL,
+          source: 'https://github.com/KennethMurugu/ecommerce-store'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'shopio-thumb.png',
+          title: 'Shopio Ecommerce',
+          description: 'A simple one-page concept for an ecommerce storefront.',
+          link: process.env.VUE_APP_SHOPIO_URL,
+          source: 'https://github.com/KennethMurugu/ecommerce-store'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'shopio-thumb.png',
+          title: 'Shopio Ecommerce',
+          description: 'A simple one-page concept for an ecommerce storefront.',
+          link: process.env.VUE_APP_SHOPIO_URL,
+          source: 'https://github.com/KennethMurugu/ecommerce-store'
         },
         {
-          thumbnail: 'project-1.png',
-          title: 'Some Title',
-          description: 'Some awesome description here'
+          thumbnail: 'shopio-thumb.png',
+          title: 'Shopio Ecommerce',
+          description: 'A simple one-page concept for an ecommerce storefront.',
+          link: process.env.VUE_APP_SHOPIO_URL,
+          source: 'https://github.com/KennethMurugu/ecommerce-store'
         }
       ]
     }
@@ -124,7 +133,7 @@ export default {
 
 .project-list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, 350px);
   align-items: center;
   justify-content: center;
   gap: 1.5rem 3rem;
