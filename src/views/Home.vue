@@ -8,7 +8,11 @@
             <p class="mb-0 mt-3 text">Github</p>
           </a>
         </div>
-        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-3" />
+        <img
+          :src="require('@/assets/img/me.jpeg')"
+          alt="Kenneth Kimotho"
+          class="avatar-me mx-3"
+        />
         <div class="social-link-container right">
           <a href="https://twitter.com/NOTzeroday">
             <fa-icon class="icon" :icon="['fab', 'twitter-square']"></fa-icon>
@@ -19,7 +23,9 @@
 
       <div class="personal-details">
         <h1 class="name">Kenneth Kimotho</h1>
-        <p class="title">Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer</p>
+        <p class="title">
+          Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer
+        </p>
       </div>
     </div>
 

@@ -1,10 +1,14 @@
 <template>
   <div class="header">
-    <div class="dropdown-links" :class="{ 'hide': !showDropdown }">
+    <div class="dropdown-links" :class="{ hide: !showDropdown }">
       <slot></slot>
     </div>
     <div class="content">
-      <fa-icon class="fa-lg dropdown-toggle" icon="bars" @click="showDropdown = !showDropdown"></fa-icon>
+      <fa-icon
+        class="fa-lg dropdown-toggle"
+        icon="bars"
+        @click="showDropdown = !showDropdown"
+      ></fa-icon>
       <h1 class="title">{{ title }}</h1>
       <div class="right-container">
         <div class="links">

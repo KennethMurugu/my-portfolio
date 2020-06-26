@@ -1,8 +1,8 @@
 <template>
   <div class="project-summary pb-6">
     <div class="info px-2">
-      <h1 class="title mb-0">{{project.title}}</h1>
-      <p class="description mt-0">{{project.description}}</p>
+      <h1 class="title mb-0">{{ project.title }}</h1>
+      <p class="description mt-0">{{ project.description }}</p>
     </div>
     <img
       :src="require(`@/assets/img/projects/${project.thumbnail}`)"

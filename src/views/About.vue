@@ -28,11 +28,15 @@
 
         <p class="text-justify">
           If my life is a recipe, then
-          <b>passion</b> is the secret sauce. It drives me as an individual and helps make my work stand-out.
+          <b>passion</b> is the secret sauce. It drives me as an individual and
+          helps make my work stand-out.
         </p>
         <p>
           I love to code. I love making the software that I produce look and
-          <b>feel</b> good to use, which is why I became a UI/UX designer and Front-end developer. I love the details, the nitty gritties of UI design and taking the time to make sure the end-user of my software has the best possible experience.
+          <b>feel</b> good to use, which is why I became a UI/UX designer and
+          Front-end developer. I love the details, the nitty gritties of UI
+          design and taking the time to make sure the end-user of my software
+          has the best possible experience.
         </p>
       </section>
 
@@ -45,7 +49,11 @@
           <span class="text">Skills</span>
         </div>
 
-        <p>In a nutshell, my skillset encompasses most of the front-end development process, from design/protyping/wireframing to the actual get-your-hands-dirty programming implementation.</p>
+        <p>
+          In a nutshell, my skillset encompasses most of the front-end
+          development process, from design/protyping/wireframing to the actual
+          get-your-hands-dirty programming implementation.
+        </p>
 
         <div class="skills-list">
           <div class="skill pa-3" v-for="(skill, index) in skills" :key="index">
@@ -56,12 +64,25 @@
               </span>
               {{ skill.name }}
             </p>
-            <div class="bar" :data-tippy-content="getSkillTooltipContent(skill.percentage)">
-              <span class="fill" :class="{'active': skill.percentage >= 1}">&#128528;</span>
-              <span class="fill" :class="{'active': skill.percentage >= 2}">&#128524;</span>
-              <span class="fill" :class="{'active': skill.percentage >= 3}">&#128522;</span>
-              <span class="fill" :class="{'active': skill.percentage >= 4}">&#128523;</span>
-              <span class="fill" :class="{'active': skill.percentage >= 5}">&#128513;</span>
+            <div
+              class="bar"
+              :data-tippy-content="getSkillTooltipContent(skill.percentage)"
+            >
+              <span class="fill" :class="{ active: skill.percentage >= 1 }"
+                >&#128528;</span
+              >
+              <span class="fill" :class="{ active: skill.percentage >= 2 }"
+                >&#128524;</span
+              >
+              <span class="fill" :class="{ active: skill.percentage >= 3 }"
+                >&#128522;</span
+              >
+              <span class="fill" :class="{ active: skill.percentage >= 4 }"
+                >&#128523;</span
+              >
+              <span class="fill" :class="{ active: skill.percentage >= 5 }"
+                >&#128513;</span
+              >
             </div>
           </div>
         </div>
