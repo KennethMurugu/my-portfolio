@@ -1,57 +1,52 @@
 <template>
-  <div class="page projects pb-5">
-    <!-- <div class="header mx-auto mb-12">
-      <div class="icons-container">
-        <i class="fas fa-laptop-code fa-7x icon"></i>
-        <i class="fas fa-palette fa-4x icon"></i>
-        <i class="fab fa-node-js fa-4x icon"></i>
-        <i class="fab fa-vuejs fa-7x icon"></i>
-      </div>
-    </div>-->
+  <div class="page projects">
+    <PageHeader title="Projects" class="mb-6">
+      <router-link to="/about" class="btn flat">About</router-link>
+      <router-link to="/sayhi" class="btn flat">Say Hi</router-link>
+    </PageHeader>
 
-    <div class="speech-container mx-auto mb-12">
-      <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
-      <div class="speech pa-5 pl-12">
-        <p>
-          Have a look at some of the projects I've worked on, with links to the Github source and demos where applicable.
-          <span>&#128516;</span>
-        </p>
+    <div class="page-content px-3">
+      <div class="speech-container mx-auto mb-6">
+        <img
+          :src="require('@/assets/img/me.jpeg')"
+          alt="Kenneth Kimotho"
+          class="avatar-me mx-auto"
+        />
+        <div class="speech pa-5">
+          <p>
+            Have a look at some of the projects I've worked on, with links to
+            the Github source and demos where applicable.
+            <span>&#128516;</span>
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="project-list">
-      <ProjectSummaryCard v-for="(item, index) in projectList" :key="index" :project="item" />
+      <div class="project-list">
+        <ProjectSummaryCard
+          v-for="(project, index) in projectList"
+          :key="index"
+          :project="project"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ProjectSummaryCard from '@/components/ProjectSummaryCard'
+import PageHeader from '@/components/PageHeader'
 export default {
   name: 'Projects',
-  components: { ProjectSummaryCard },
+  components: { ProjectSummaryCard, PageHeader },
   data() {
     return {
       projectList: [
         {
-          thumbnail: 'project-1.jpg',
-          title: 'Title',
-          description: 'Description here'
-        },
-        {
-          thumbnail: 'project-1.jpg',
-          title: 'Title',
-          description: 'Description here'
-        },
-        {
-          thumbnail: 'project-1.jpg',
-          title: 'Title',
-          description: 'Description here'
-        },
-        {
-          thumbnail: 'project-1.jpg',
-          title: 'Title',
-          description: 'Description here'
+          thumbnail: 'shopio-thumb.png',
+          title: 'Shopio Ecommerce',
+          description: 'A simple one-page concept for an ecommerce storefront.',
+          link: process.env.VUE_APP_SHOPIO_URL,
+          source: 'https://github.com/KennethMurugu/ecommerce-store'
         }
       ]
     }
@@ -66,14 +61,9 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  background: #641b2b;
+  // background: #460476;
   display: block;
   padding: 0;
-}
-.header {
-  width: 90%;
-  max-width: 500px;
-  padding-top: 5rem;
 }
 
 .icons-container {
@@ -131,7 +121,7 @@ export default {
 
 .project-list {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, 350px);
   align-items: center;
   justify-content: center;
   gap: 1.5rem 3rem;
@@ -143,4 +133,3 @@ export default {
   }
 }
 </style>
-

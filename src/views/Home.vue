@@ -4,14 +4,18 @@
       <div class="row-1">
         <div class="social-link-container left">
           <a href="https://github.com/KennethMurugu/">
-            <i class="fab fa-github-square icon"></i>
+            <fa-icon class="icon" :icon="['fab', 'github-square']"></fa-icon>
             <p class="mb-0 mt-3 text">Github</p>
           </a>
         </div>
-        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-3" />
+        <img
+          :src="require('@/assets/img/me.jpeg')"
+          alt="Kenneth Kimotho"
+          class="avatar-me mx-3"
+        />
         <div class="social-link-container right">
           <a href="https://twitter.com/NOTzeroday">
-            <i class="fab fa-twitter-square icon"></i>
+            <fa-icon class="icon" :icon="['fab', 'twitter-square']"></fa-icon>
             <p class="mb-0 mt-3 text">Twitter</p>
           </a>
         </div>
@@ -19,24 +23,26 @@
 
       <div class="personal-details">
         <h1 class="name">Kenneth Kimotho</h1>
-        <p class="title">Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer</p>
+        <p class="title">
+          Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer
+        </p>
       </div>
     </div>
 
     <div class="main-links-container">
       <div class="link-container" ref="btnAboutMe">
         <!-- <a href="#" class="link about-me" ref="btnAboutMe" @click="$router.go('/home')">ABOUT ME</a> -->
-        <router-link class="link about-me" to="/pages/about">About Me</router-link>
+        <router-link class="link about-me" to="/about">About Me</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnProjects">
         <!-- <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a> -->
-        <router-link class="link projects" to="/pages/projects">Projects</router-link>
+        <router-link class="link projects" to="/projects">Projects</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnSayHi">
         <!-- <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a> -->
-        <router-link class="link say-hi" to="/pages/sayhi">Say Hi</router-link>
+        <router-link class="link say-hi" to="/sayhi">Say Hi</router-link>
         <div class="pulse"></div>
       </div>
     </div>
@@ -47,24 +53,28 @@
 export default {
   name: 'Home',
   mounted() {
-    const home = document.querySelector('body')
+    const body = document.querySelector('body')
     this.$refs['btnAboutMe'].addEventListener('mouseenter', function() {
-      home.classList.add('about-me-hovered')
+      body.classList.add('about-me-hovered')
     })
     this.$refs['btnAboutMe'].addEventListener('mouseleave', function() {
-      home.classList.remove('about-me-hovered')
+      body.classList.remove('about-me-hovered')
     })
+    this.$refs['btnAboutMe'].addEventListener('click', function() {
+      body.classList.remove('about-me-hovered')
+    })
+
     this.$refs['btnProjects'].addEventListener('mouseenter', function() {
-      home.classList.add('projects-hovered')
+      body.classList.add('projects-hovered')
     })
     this.$refs['btnProjects'].addEventListener('mouseleave', function() {
-      home.classList.remove('projects-hovered')
+      body.classList.remove('projects-hovered')
     })
     this.$refs['btnSayHi'].addEventListener('mouseenter', function() {
-      home.classList.add('say-hi-hovered')
+      body.classList.add('say-hi-hovered')
     })
     this.$refs['btnSayHi'].addEventListener('mouseleave', function() {
-      home.classList.remove('say-hi-hovered')
+      body.classList.remove('say-hi-hovered')
     })
   }
 }
@@ -95,7 +105,7 @@ export default {
 
       .icon {
         font-size: 2.75rem;
-        text-shadow: 0px 0px 25px #000000e7;
+        filter: drop-shadow(0px 0px 25px #000000e7);
         transition: all 0.2s ease;
       }
       .text {
@@ -108,7 +118,7 @@ export default {
       &:hover {
         .icon {
           transform: scale(1.2);
-          text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.623);
+          filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.623));
         }
         .text {
           opacity: 1;
@@ -122,7 +132,7 @@ export default {
   .avatar-me {
     width: 40%;
     max-width: 460px;
-    border-radius: 50%;
+    border-radius: 5px;
     box-shadow: 0px 0px 25px #00000078;
   }
 
@@ -151,7 +161,7 @@ export default {
   a {
     display: block;
     color: #fff;
-    border: 10px solid #fff;
+    border: 5px solid #fff;
     padding: 1rem 5rem;
     font-size: 2rem;
     box-shadow: 0px 0px 25px #00000078;
@@ -159,16 +169,18 @@ export default {
     font-weight: bold;
     transition: all 0.2s ease;
     text-align: center;
+    border-radius: 5px;
 
     & + .pulse {
       position: absolute;
       width: 100%;
       height: 100%;
       background: transparent;
-      border: 10px solid #fff;
+      border: 5px solid #fff;
       pointer-events: none;
       left: 0;
       top: 0;
+      border-radius: 5px;
     }
 
     &:hover + .pulse {

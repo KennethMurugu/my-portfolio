@@ -1,15 +1,10 @@
 <template>
-  <div class="header" :style="{ background }">
-    <div
-      class="dropdown-links"
-      ref="dropdown-links"
-      :class="{ 'hide': !showDropdown }"
-      @click="close"
-    >
+  <div class="header">
+    <div class="dropdown-links" :class="{ hide: !showDropdown }">
       <slot></slot>
     </div>
     <div class="content">
-      <i class="fas fa-bars fa-lg dropdown-toggle" @click="showDropdown = !showDropdown"></i>
+      <fa-icon class="fa-lg dropdown-toggle" icon="bars" @click="showDropdown = !showDropdown"></fa-icon>
       <h1 class="title">{{ title }}</h1>
       <div class="right-container">
         <div class="links" @click="resetScroll">
@@ -17,7 +12,7 @@
         </div>
         <div class="close" @click="$router.push('/')">
           <div class="bg"></div>
-          <i class="fas fa-times fa-lg"></i>
+          <fa-icon class="fa-lg" icon="times"></fa-icon>
         </div>
       </div>
     </div>
@@ -28,19 +23,11 @@
 export default {
   name: 'PageHeader',
   props: {
-    title: String,
-    background: String
+    title: { type: String, default: '' }
   },
   data() {
-    return { showDropdown: false }
-  },
-  methods: {
-    close() {
-      this.showDropdown = !this.showDropdown
-      this.resetScroll()
-    },
-    resetScroll() {
-      window.scrollTo({ left: 0, top: 0, behavior: 'auto' })
+    return {
+      showDropdown: false
     }
   }
 }
@@ -55,6 +42,7 @@ export default {
   z-index: 9999;
   backdrop-filter: blur(5px);
   transition: background-color 1.35s ease;
+  background-color: rgba(0, 0, 0, 0.452);
 
   .title {
     margin: 0.5rem 0;
@@ -85,21 +73,19 @@ export default {
       margin-right: 3rem;
       align-items: center;
 
-      & * {
-        // margin: 0 0.75rem;
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition: all 0.2s ease;
-        padding: 5px 15px;
-        color: #fff;
-        width: 100px;
-        text-align: center;
+      // & * {
+      //   margin: 0 0.75rem;
+      //   cursor: pointer;
+      //   border: 1px solid transparent;
+      //   transition: all 0.2s ease;
+      //   padding: 5px 15px;
+      //   color: #fff;
 
-        &:hover {
-          text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
-          border-color: #fff;
-        }
-      }
+      //   &:hover {
+      //     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.438);
+      //     border-color: #fff;
+      //   }
+      // }
     }
 
     .close {
