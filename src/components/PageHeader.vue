@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="dropdown-links" :class="{ hide: !showDropdown }">
+    <div class="dropdown-links" :class="{ hide: !showDropdown }" @click="resetScroll">
       <slot></slot>
     </div>
     <div class="content">
@@ -28,6 +28,11 @@ export default {
   data() {
     return {
       showDropdown: false
+    }
+  },
+  methods: {
+    resetScroll() {
+      document.querySelector('html').scrollTop = 0
     }
   }
 }

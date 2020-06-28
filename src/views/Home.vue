@@ -8,11 +8,7 @@
             <p class="mb-0 mt-3 text">Github</p>
           </a>
         </div>
-        <img
-          :src="require('@/assets/img/me.jpeg')"
-          alt="Kenneth Kimotho"
-          class="avatar-me mx-3"
-        />
+        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-3" />
         <div class="social-link-container right">
           <a href="https://twitter.com/NOTzeroday">
             <fa-icon class="icon" :icon="['fab', 'twitter-square']"></fa-icon>
@@ -23,9 +19,7 @@
 
       <div class="personal-details">
         <h1 class="name">Kenneth Kimotho</h1>
-        <p class="title">
-          Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer
-        </p>
+        <p class="title">Front-end Web Developer&nbsp;&bull;&nbsp;UI/UX Designer</p>
       </div>
     </div>
 
@@ -54,6 +48,7 @@ export default {
   name: 'Home',
   mounted() {
     const body = document.querySelector('body')
+    // Btn About Me
     this.$refs['btnAboutMe'].addEventListener('mouseenter', function() {
       body.classList.add('about-me-hovered')
     })
@@ -64,16 +59,27 @@ export default {
       body.classList.remove('about-me-hovered')
     })
 
+    // Btn Projects
     this.$refs['btnProjects'].addEventListener('mouseenter', function() {
       body.classList.add('projects-hovered')
     })
     this.$refs['btnProjects'].addEventListener('mouseleave', function() {
       body.classList.remove('projects-hovered')
     })
+
+    this.$refs['btnProjects'].addEventListener('click', function() {
+      body.classList.remove('projects-hovered')
+    })
+
+    // Btn Say Hi
     this.$refs['btnSayHi'].addEventListener('mouseenter', function() {
       body.classList.add('say-hi-hovered')
     })
     this.$refs['btnSayHi'].addEventListener('mouseleave', function() {
+      body.classList.remove('say-hi-hovered')
+    })
+
+    this.$refs['btnSayHi'].addEventListener('click', function() {
       body.classList.remove('say-hi-hovered')
     })
   }
