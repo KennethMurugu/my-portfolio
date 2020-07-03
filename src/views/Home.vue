@@ -1,5 +1,15 @@
 <template>
   <div class="home page" ref="home-page">
+    <div class="top-social-links">
+      <a href="https://github.com/KennethMurugu/" class="btn link">
+        <fa-icon class="icon mr-3" :icon="['fab', 'github-square']"></fa-icon>
+        <span class="text">Github</span>
+      </a>
+      <a href="https://twitter.com/kendotkim" class="btn link">
+        <fa-icon class="icon mr-3" :icon="['fab', 'twitter-square']"></fa-icon>
+        <span class="text">Twitter</span>
+      </a>
+    </div>
     <div class="intro-container">
       <div class="row-1">
         <div class="social-link-container left">
@@ -10,7 +20,7 @@
         </div>
         <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-3" />
         <div class="social-link-container right">
-          <a href="https://twitter.com/NOTzeroday">
+          <a href="https://twitter.com/kendotkim">
             <fa-icon class="icon" :icon="['fab', 'twitter-square']"></fa-icon>
             <p class="mb-0 mt-3 text">Twitter</p>
           </a>
@@ -94,6 +104,9 @@ export default {
   display: grid;
   grid-template-columns: auto;
   align-items: center;
+  max-width: 590px;
+  margin-left: auto;
+  margin-right: auto;
 
   .row-1 {
     display: flex;
@@ -215,6 +228,16 @@ export default {
   }
 }
 
+.top-social-links {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  // column-gap: 1rem;
+  .link {
+    text-align: center;
+    border-radius: 0px;
+  }
+}
+
 @keyframes pulseAnim {
   to {
     transform: scale(1.1, 1.35);
@@ -244,6 +267,18 @@ export default {
     & + .pulse {
       border-width: 5px;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .top-social-links {
+    display: grid;
+  }
+  .intro-container .row-1 {
+    justify-content: center;
+  }
+  .social-link-container {
+    display: none;
   }
 }
 </style>
