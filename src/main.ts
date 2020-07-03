@@ -13,7 +13,12 @@ import {
   faBolt,
   faLaptopCode,
   faPalette,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faHome,
+  faUser,
+  faCode,
+  faComment,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithubSquare,
@@ -35,6 +40,11 @@ library.add({
   faLaptopCode,
   faPalette,
   faExternalLinkAlt,
+  faHome,
+  faUser,
+  faCode,
+  faComment,
+  faArrowLeft,
   // Brands
   faGithubSquare,
   faTwitterSquare,
