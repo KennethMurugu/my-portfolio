@@ -75,7 +75,6 @@ export default {
   backdrop-filter: blur(5px);
   transition: background-color 1.35s ease;
   background-color: rgba(0, 0, 0, 0.452);
-  line-height: 2rem;
 
   .title {
     margin: 0.5rem 0;
@@ -165,12 +164,10 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: left 0.35s ease;
+  transition: transform 0.35s ease;
 
   &.hide {
-    // display: none;
-    left: -100%;
-    // pointer-events: none;
+    transform: translateX(-100%);
   }
 
   .link {
