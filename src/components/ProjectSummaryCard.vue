@@ -4,6 +4,17 @@
       <h1 class="title mb-0">{{ project.title }}</h1>
       <p class="description mt-0">{{ project.description }}</p>
     </div>
+    <div class="tools mb-3">
+      <div
+        class="item"
+        v-for="(tool, index) in project.tools"
+        :key="index"
+        :style="`color: ${tool.color}; border-color: ${tool.color} `"
+      >
+        <fa-icon :icon="tool.icon" class="mr-3"></fa-icon>
+        <span>{{tool.name}}</span>
+      </div>
+    </div>
     <img
       :src="require(`@/assets/img/projects/${project.thumbnail}`)"
       :alt="project.title"
@@ -54,6 +65,14 @@ export default {
     &:hover {
       box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.61);
     }
+  }
+}
+
+.tools {
+  .item {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 

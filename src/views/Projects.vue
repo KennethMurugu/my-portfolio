@@ -7,11 +7,7 @@
 
     <div class="page-content px-3">
       <div class="speech-container mx-auto mb-6">
-        <img
-          :src="require('@/assets/img/me.jpeg')"
-          alt="Kenneth Kimotho"
-          class="avatar-me mx-auto"
-        />
+        <img :src="require('@/assets/img/me.jpeg')" alt="Kenneth Kimotho" class="avatar-me mx-auto" />
         <div class="speech pa-5">
           <p>
             Have a look at some of the projects I've worked on, with links to
@@ -46,7 +42,15 @@ export default {
           title: 'Shopio Ecommerce',
           description: 'A simple one-page concept for an ecommerce storefront.',
           link: process.env.VUE_APP_SHOPIO_URL,
-          source: 'https://github.com/KennethMurugu/ecommerce-store'
+          source: 'https://github.com/KennethMurugu/ecommerce-store',
+          tools: [
+            {
+              name: 'Vue.js',
+              icon: ['fab', 'vuejs'],
+              color: '#5dc18e',
+              isBrand: true
+            }
+          ]
         }
       ]
     }

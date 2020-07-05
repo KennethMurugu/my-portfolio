@@ -35,17 +35,14 @@
 
     <div class="main-links-container">
       <div class="link-container" ref="btnAboutMe">
-        <!-- <a href="#" class="link about-me" ref="btnAboutMe" @click="$router.go('/home')">ABOUT ME</a> -->
         <router-link class="link about-me" to="/about">About Me</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnProjects">
-        <!-- <a href="#" class="link projects" ref="btnProjects" @click="$emit('switchpage', 2)">PROJECTS</a> -->
         <router-link class="link projects" to="/projects">Projects</router-link>
         <div class="pulse"></div>
       </div>
       <div class="link-container" ref="btnSayHi">
-        <!-- <a href="#" class="link say-hi" ref="btnSayHi" @click="$emit('switchpage', 3)">SAY HI</a> -->
         <router-link class="link say-hi" to="/sayhi">Say Hi</router-link>
         <div class="pulse"></div>
       </div>
