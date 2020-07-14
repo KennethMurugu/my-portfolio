@@ -94,6 +94,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home {
+  padding-top: 3rem;
+  &.about-me-hovered {
+    background-position: 0%;
+  }
+  &.say-hi-hovered {
+    background-position: 100%;
+  }
+}
+
+.top-social-links {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  .link {
+    text-align: center;
+    border-radius: 0px;
+  }
+}
+
 .intro-container {
   padding-top: 1rem;
   text-align: center;
@@ -216,25 +237,6 @@ export default {
   }
 }
 
-.home {
-  &.about-me-hovered {
-    background-position: 0%;
-  }
-  &.say-hi-hovered {
-    background-position: 100%;
-  }
-}
-
-.top-social-links {
-  display: none;
-  grid-template-columns: 1fr 1fr;
-  // column-gap: 1rem;
-  .link {
-    text-align: center;
-    border-radius: 0px;
-  }
-}
-
 @keyframes pulseAnim {
   to {
     transform: scale(1.1, 1.35);
@@ -256,6 +258,9 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
+  .home {
+    padding-top: 0rem;
+  }
   .main-links-container a {
     border-width: 5px;
     padding: 1rem 5rem;
