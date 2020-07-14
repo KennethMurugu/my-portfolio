@@ -69,6 +69,10 @@ export default {
 }
 
 .tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+
   .item {
     border: 1px solid transparent;
     border-radius: 3px;

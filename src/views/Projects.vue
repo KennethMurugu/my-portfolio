@@ -47,8 +47,27 @@ export default {
             {
               name: 'Vue.js',
               icon: ['fab', 'vuejs'],
-              color: '#5dc18e',
-              isBrand: true
+              color: '#5dc18e'
+            }
+          ]
+        },
+        {
+          thumbnail: 'daraja-demo-thumb.png',
+          title: 'Daraja (M-Pesa) Demo',
+          description:
+            "A demo of the checkout process using Daraja's STK Push.",
+          link: process.env.VUE_APP_DARAJA_DEMO_URL,
+          source: 'https://github.com/KennethMurugu/demo-daraja-checkout-ui',
+          tools: [
+            {
+              name: 'Daraja (M-Pesa)',
+              icon: 'money-bill',
+              color: '#5eb64b'
+            },
+            {
+              name: 'Webpack',
+              icon: 'wrench',
+              color: '#5598c8'
             }
           ]
         }
