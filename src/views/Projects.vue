@@ -70,6 +70,26 @@ export default {
               color: '#5598c8'
             }
           ]
+        },
+        {
+          thumbnail: 'vue-dashboard-thumb.png',
+          title: 'Sales Dashboard',
+          description:
+            'A sales dashboard concept built using Vue. Uses Apex Charts for data visualization.',
+          link: process.env.VUE_APP_VUE_DASHBOARD_URL,
+          source: 'https://github.com/KennethMurugu/vue-dashboard',
+          tools: [
+            {
+              name: 'Vue.js',
+              icon: ['fab', 'vuejs'],
+              color: '#5dc18e'
+            },
+            {
+              name: 'Apex Charts',
+              icon: 'chart-line',
+              color: '#fc7a00'
+            }
+          ]
         }
       ]
     }

@@ -20,7 +20,8 @@ import {
   faComment,
   faArrowLeft,
   faMoneyBill,
-  faWrench
+  faWrench,
+  faChartLine
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithubSquare,
@@ -49,6 +50,7 @@ library.add({
   faArrowLeft,
   faMoneyBill,
   faWrench,
+  faChartLine,
   // Brands
   faGithubSquare,
   faTwitterSquare,
