@@ -1,32 +1,24 @@
 .intro {
   position: relative;
-  background-image: linear-gradient(-90deg, #02294d, #0fb5f7);
-
-  display: grid;
-  grid-template-columns: 600px auto;
-  grid-template-rows: 950px;
-  /* align-items: center; */
-  /* column-gap: 2rem; */
+  background-image: linear-gradient(90deg, #1170ca, #073b6b);
+}
+.intro-content {
+  display: flex;
 }
 
-.img-container,
-.img-container img {
-  height: 100%;
+.img-me {
+  /* height: 100%; */
   width: 100%;
-}
-
-.img-container {
   animation: enterImgContainer 1s ease forwards;
+  box-shadow: 3px 0px 5px #00000038;
+  max-width: 400px;
 }
 
 .info-container {
   padding: 1em 1rem 1rem 5rem;
   text-align: left;
   font-size: 1.5rem;
-  /* border-left: 3px solid #00000018; */
-
   display: flex;
-  /* place-items: center; */
 }
 
 .info-container .info {
@@ -68,6 +60,8 @@
   background-image: url('/img/coding-2.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  box-shadow: 0px -3px 5px #00000038;
 }
 .skills-content {
   z-index: 2;
@@ -119,8 +113,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 310px);
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .project-container .thumbnail {

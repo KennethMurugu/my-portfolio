@@ -1,0 +1,14 @@
+@media screen and (max-width: 930px) {
+  /* Intro */
+  .intro {
+    background-image: url('../img/me-intro.jpg');
+    background-position: 50% 30%;
+  }
+  .intro .img-me {
+    display: none;
+  }
+  .intro .info-container {
+    background-color: #073b6b8e;
+    padding: 3rem 2rem;
+  }
+}

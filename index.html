@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/components/buttons.css" />
     <link rel="stylesheet" href="/css/components/helpers.css" />
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/index.responsive.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -25,28 +26,34 @@
   </head>
   <body>
     <div class="intro">
-      <div class="img-container">
-        <img src="./img/me-intro.jpg" alt="Kenneth Kimotho Murugu" />
-      </div>
-      <div class="info-container">
-        <div class="info">
-          <h1>Hi, I'm Kenneth :)</h1>
-          <h2>I'm a <u>Front-end Developer</u> and <u>UI/UX Designer.</u></h2>
-          <hr />
-          <h3>kennethmurugu@gmail.com</h3>
-          <p>
-            <a href="https://twitter.com/kendotkim">
-              <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i>
-              @kendotkim
-            </a>
-          </p>
+      <div class="intro-content cap-max-width">
+        <!-- <div class="img-container"> -->
+        <img
+          class="img-me"
+          src="./img/me-intro.jpg"
+          alt="Kenneth Kimotho Murugu"
+        />
+        <!-- </div> -->
+        <div class="info-container">
+          <div class="info">
+            <h1>Hi, I'm Kenneth :)</h1>
+            <h2>I'm a <u>Front-end Developer</u> and <u>UI/UX Designer.</u></h2>
+            <hr />
+            <h3>kennethmurugu@gmail.com</h3>
+            <p>
+              <a href="https://twitter.com/kendotkim">
+                <i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i>
+                @kendotkim
+              </a>
+            </p>
 
-          <p>
-            <a href="https://github.com/KennethMurugu/">
-              <i class="fa fa-github-square fa-lg" aria-hidden="true"></i>
-              KennethMurugu
-            </a>
-          </p>
+            <p>
+              <a href="https://github.com/KennethMurugu/">
+                <i class="fa fa-github-square fa-lg" aria-hidden="true"></i>
+                KennethMurugu
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -135,12 +142,12 @@
         <br />
         <span>Skills</span>
       </div>
-      <h1 class="max-w-1000">Recent Work</h1>
-      <p class="max-w-1000">
+      <h1 class="cap-max-width">Recent Work</h1>
+      <p class="cap-max-width">
         Have a look at some my work, with links to the Github source code and
         demos where applicable. 😄
       </p>
-      <div class="recent-work-list">
+      <div class="recent-work-list cap-max-width">
         <div class="project-container">
           <h2>Sales Dashboard</h2>
           <p>
