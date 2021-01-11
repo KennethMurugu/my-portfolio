@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  background-image: linear-gradient(90deg, #1170ca, #073b6b);
+  background-color: #1170ca;
 }
 .intro-content {
   display: flex;
