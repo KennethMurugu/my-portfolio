@@ -72,6 +72,11 @@
   text-align: center;
 }
 
+.skills-header-2 {
+  text-align: center;
+  display: none;
+}
+
 .skills-list {
   z-index: 2;
   display: grid;

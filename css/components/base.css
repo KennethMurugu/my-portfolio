@@ -11,7 +11,7 @@ a {
   color: rgb(6, 202, 6);
   text-decoration: none;
 }
-a:hover {
+a:hover:not(.btn) {
   color: rgb(67, 233, 67);
 }
 hr {
