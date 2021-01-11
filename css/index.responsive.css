@@ -1,0 +1,38 @@
+@media screen and (max-width: 930px) {
+  /* Intro */
+  .intro {
+    background-image: url('../img/me-intro-colored.jpg');
+    background-position: 50% 12%;
+    background-size: cover;
+  }
+  .intro .img-me {
+    display: none;
+  }
+  .intro .info-container {
+    background-color: #073b6b8e;
+    padding: 3rem 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* Intro */
+  .info-container {
+    font-size: 1rem;
+  }
+  /* Skills */
+  .skills {
+    padding: 6rem 2rem;
+    background-attachment: scroll;
+  }
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-header {
+    display: none;
+  }
+
+  .skills-header-2 {
+    display: block;
+  }
+}

@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  color: rgb(6, 202, 6);
+  text-decoration: none;
+}
+a:hover:not(.btn) {
+  color: rgb(67, 233, 67);
+}
+hr {
+  border-color: rgb(52 107 156 / 26%);
+}
