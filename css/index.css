@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  background-color: #1170ca;
+  background-color: #040d22;
 }
 .intro-content {
   display: flex;
@@ -13,6 +13,11 @@
   box-shadow: 0px 0px 10px #00000038;
   max-width: 400px;
   filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.img-me:hover {
+  filter: grayscale(0%);
 }
 
 .info-container {
