@@ -1,6 +1,6 @@
 .intro {
   position: relative;
-  background-color: #040d22;
+  /* background-color: #040d22; */
 }
 .intro-content {
   display: flex;
@@ -117,7 +117,7 @@
 .recent-work {
   position: relative;
   padding: 5rem 2rem;
-  background-color: #430594;
+  /* background-color: #040d22; */
 }
 .recent-work-list {
   display: grid;
@@ -156,6 +156,6 @@
 /* Footer */
 .footer {
   padding: 2rem;
-  background-color: rgb(21, 21, 21);
+  background-color: #050a17;
   text-align: center;
 }
