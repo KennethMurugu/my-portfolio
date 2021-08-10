@@ -1,3 +1,8 @@
+@media screen and (max-width: 1058px) {
+  .recent-work{
+    text-align: center;
+  }
+}
 @media screen and (max-width: 930px) {
   /* Intro */
   .intro {
@@ -11,6 +16,7 @@
   .intro .info-container {
     background-color: #073b6b8e;
     padding: 3rem 2rem 4rem;
+    text-align: center;
   }
 }
 
